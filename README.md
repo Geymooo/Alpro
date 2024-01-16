@@ -1,1 +1,2 @@
-Kelompok 3
+- Kelompok 3
+- Algoritma dan Pemrograman
