@@ -284,10 +284,11 @@ for item in paket:
     print("Harga Tiket per Unit :",item["Harga"])
     print()
 
-print("PPN (15%) : Rp.", ppn)
-print("Biaya Layanan (5%) : Rp.", biaya_layanan)
-print("Total Harga Keseluruhan : Rp.", total_harga)
+print("PPN (15%) : Rp", ppn)
+print("Biaya Layanan (5%) : Rp", biaya_layanan)
+print("Total Harga Keseluruhan : Rp", total_harga)
 Garis()
+
 def nomor_kursi():
  count = 1
  for i in range(10):
@@ -299,14 +300,40 @@ def nomor_kursi():
     print()
 
 nomor_kursi()
-    
 tiket_kursi = input(f"Masukkan nomor kursi(pisahkan dengan koma jika membeli lebih dari satu): ").split(',')
 tiket_kursi= [int(elemen) for elemen in tiket_kursi]
 Garis()
-print("Pembelian atas nama : ",nama)
-print("Nomor Handphone : ",nomor)
-print("Email Pembeli : ",email)
-print ("selamat anda telah membeli tiket nomor ", tiket_kursi)
-print("Harga tiket : Rp.", total_harga)
-print("TERIMA KASIH SUDAH MEMBELI SELAMAT MENONTON ENJOY !")
+
+def metode_pembayaran(pilihan):
+    if pilihan == 1:
+        return "Pembayaran via Kartu Kredit"
+    elif pilihan == 2:
+        return "Pembayaran via Transfer Bank"
+    elif pilihan == 3:
+        return "Pembayaran via E-Wallet"
+    elif pilihan == 4:
+        return "Pembayaran via Tunai"
+    else:
+        return "Pilihan metode pembayaran tidak valid"
+
+print("Pilih metode pembayaran:")
+print("1. Kartu Kredit")
+print("2. Transfer Bank")
+print("3. E-Wallet")
+print("4. Tunai")
+
+pilihan_user = int(input("Masukkan nomor metode pembayaran yang dipilih: "))
+hasil_pembayaran = metode_pembayaran(pilihan_user)
+
+Garis()
+print("Pembelian atas nama :",nama)
+print("Nomor Telepon :",nomor)
+print("Email Pembeli :",email)
+for item in paket:
+    print("Jenis Tiket :",item["Jenis Tiket"])
+    print("Jumlah Pembelian :",item["Jumlah Pembelian"])
+print ("Selamat anda telah membeli tiket nomor ", tiket_kursi)
+print("Harga tiket : Rp",total_harga)
+print("Metode pembayaran anda memilih:", hasil_pembayaran)
+print("TERIMA KASIH SUDAH MEMBELI DAN SELAMAT MENONTON! ENJOY!")
 Garis()
